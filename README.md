@@ -1,6 +1,45 @@
+<<<<<<< HEAD
 # Airbnb
+=======
+# 🏠 Airbnb Clone (Flutter & Firebase)
 
-A new Flutter project.
+A fully functional Airbnb clone built using Flutter and Firebase. This app allows users to browse hotel listings, log in with Google, view locations on a map, and save favorite hotels to a wishlist.
+
+## ✨ Features
+- 🔑 **Google Authentication** – Users can log in using their Google account.
+- 🏨 **Hotel Listings** – Hotels are fetched from a Firebase database.
+- 🗺️ **Map Integration** – View hotel locations directly on an interactive map.
+- ❤️ **Wishlist Feature** – Users can save and manage their favorite hotels.
+- 📡 **Firebase Backend** – Stores hotel data and user information.
+- ⚡ **Provider for State Management** – Efficient app-wide state handling.
+- 📱 **Responsive UI** – Works smoothly across different screen sizes.
+
+## 📸 Screenshots
+
+###  Login Screen
+   ![Login Screen](asset/images/loginscreen.jpg)
+
+###  Home Screen
+   ![Home Screen](asset/images/homescreen.jpg)
+
+###  Map
+   ![Map](asset/images/map.jpg)
+
+###  WishList
+   ![WishList](asset/images/wishlist.jpg)
+
+###  Login Screen
+   ![Profile Page](asset/images/profilepage.jpg)
+
+## 🛠️ Technologies Used
+- **Flutter** – UI development
+- **Firebase** – Authentication & database
+- **Google Maps API** – Map integration
+- **Provider** – State management
+
+
+>>>>>>> 1026323 (Added screenshots to README)
+
 
 ## Getting Started
 
