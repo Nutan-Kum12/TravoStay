@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "621496522355",
+    "project_id": "airbnb-f27ee",
+    "storage_bucket": "airbnb-f27ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621496522355:android:fe801e21e6287972817c06",
+        "android_client_info": {
+          "package_name": "com.example.airbnb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621496522355-dtbkoi724sadgq6a5242dt8bcoprn585.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBILNLIB3FkZJXQQDIlG2h9bSBG7DAeWf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621496522355-dtbkoi724sadgq6a5242dt8bcoprn585.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
