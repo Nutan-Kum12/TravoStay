@@ -20,6 +20,9 @@ A fully functional Airbnb clone built using Flutter and Firebase. This app allow
 ###  Home Screen
    ![Home Screen](asset/images/homescreen.jpg)
 
+### Place Details Screen
+   ![Place Detail Screen](asset/images/placedetails.jpg)
+   ![Place Detail Screen](asset/images/placedetails1.jpg)
 ###  Map
    ![Map](asset/images/map.jpg)
 
