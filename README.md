@@ -1,16 +1,22 @@
 
 # Airbnb
 
-A fully functional Airbnb clone built using Flutter and Firebase. This app allows users to browse hotel listings, log in with Google, view locations on a map, and save favorite hotels to a wishlist.
+A fully functional Airbnb clone built using Flutter and Firebase. This app allows users to browse hotel listings, log in with Google, view locations on a map, save favorite hotels to a wishlist, and make payments using Razorpay.
+
 
 ## ✨ Features
 - 🔑 **Google Authentication** – Users can log in using their Google account.
 - 🏨 **Hotel Listings** – Hotels are fetched from a Firebase database.
 - 🗺️ **Map Integration** – View hotel locations directly on an interactive map.
-- ❤️ **Wishlist Feature** – Users can save and manage their favorite hotels.
+- ❤️ **Wishlist Feature** – Users can save, add, or remove hotels from their wishlist.
 - 📡 **Firebase Backend** – Stores hotel data and user information.
 - ⚡ **Provider for State Management** – Efficient app-wide state handling.
 - 📱 **Responsive UI** – Works smoothly across different screen sizes.
+- 💳 **Razorpay Payment Integration** – Users can make payments securely through Razorpay.
+
+
+
+
 
 ## 📸 Screenshots
 
@@ -23,11 +29,15 @@ A fully functional Airbnb clone built using Flutter and Firebase. This app allow
 ### Place Details Screen
    ![Place Detail Screen](asset/images/placedetails.jpg)
    ![Place Detail Screen](asset/images/placedetails1.jpg)
+
 ###  Map
    ![Map](asset/images/map.jpg)
 
 ###  WishList
    ![WishList](asset/images/wishlist.jpg)
+
+###  Payment Screen
+   ![Map](asset/images/razorpay.jpg)
 
 ###  Login Screen
    ![Profile Page](asset/images/profilepage.jpg)
@@ -37,6 +47,8 @@ A fully functional Airbnb clone built using Flutter and Firebase. This app allow
 - **Firebase** – Authentication & database
 - **Google Maps API** – Map integration
 - **Provider** – State management
+- **Razorpay** – Secure online payment processing
+
 
 
 

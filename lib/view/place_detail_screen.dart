@@ -1,4 +1,3 @@
-
 import 'package:airbnb/components/location_in_map.dart';
 import 'package:airbnb/components/my_icon_button.dart';
 import 'package:airbnb/components/star_rating.dart';
@@ -6,6 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:airbnb/Provider/favorite_provider.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class PlaceDetailScreen extends StatefulWidget {
   final DocumentSnapshot<Object?> place;
@@ -17,6 +18,55 @@ class PlaceDetailScreen extends StatefulWidget {
 
 class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
   int currentIndex = 0;
+    late Razorpay _razorpay;
+
+  @override
+  void initState() {
+    super.initState();
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    _razorpay.clear(); // Clear the instance to prevent memory leaks
+    super.dispose();
+  }
+
+  void openCheckout() {
+    var options = {
+      'key': 'rzp_test_GcZZFDPP0jHtC4',
+      'amount':100*100, 
+      'currency': 'INR',
+      'name': 'Airbnb Clone',
+      'description': 'Booking for ${widget.place['title']}',
+      'prefill': {'contact': '9135045355', 'email': 'user@example.com'},
+      'external': {
+        'wallets': ['paytm']
+      }
+    };
+
+    try {
+      _razorpay.open(options);
+    } catch (e) {
+      debugPrint('Error: $e');
+    }
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    Fluttertoast.showToast(msg: "Payment Successful: ${response.paymentId}");
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    Fluttertoast.showToast(msg: "Payment Failed: ${response.message}");
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    Fluttertoast.showToast(msg: "External Wallet Selected: ${response.walletName}");
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -201,12 +251,17 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
               color: Colors.pink,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: const Text(
-              "Reserve",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            child: OutlinedButton(
+              onPressed: () {
+                openCheckout();
+              },
+              child: const Text(
+                "Reserve",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
